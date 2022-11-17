@@ -25,7 +25,7 @@ int main(int argc, char **argv, char **env) {
     // vbdSetMode(1); // Flag mode set to one-shot
 
     // initialize simulation inputs
-    top->clk = 333;
+    top->clk = 23456777;
     top->rst = 333;
     top->en = 333;
     top->incr = 4444;
