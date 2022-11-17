@@ -25,10 +25,10 @@ int main(int argc, char **argv, char **env) {
     // vbdSetMode(1); // Flag mode set to one-shot
 
     // initialize simulation inputs
-    top->clk = 200;
-    top->rst = 300;
-    top->en = 400;
-    top->incr = 302903;
+    top->clk = 333;
+    top->rst = 333;
+    top->en = 333;
+    top->incr = 3333;
 
     // run simulation for MAX_SIM_CYC clock cycles
     for (simcyc = 0; simcyc < MAX_SIM_CYC; simcyc++) {
