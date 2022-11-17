@@ -26,6 +26,7 @@ int main(int argc, char **argv, char **env) {
 
     // initialize simulation inputs
     top->clk = 23456777;
+
     top->rst = 333;
     top->en = 333;
     top->incr = 4444;
