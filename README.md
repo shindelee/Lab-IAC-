@@ -1,3 +1,5 @@
+Tasks
+
 4 Separate Components:
 1) Program Counter and related adders, and the instruction memory.
 2) The Register File, ALU and the related MUX.
