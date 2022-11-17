@@ -28,7 +28,7 @@ int main(int argc, char **argv, char **env) {
     top->clk = 333;
     top->rst = 333;
     top->en = 333;
-    top->incr = 3333;
+    top->incr = 4444;
 
     // run simulation for MAX_SIM_CYC clock cycles
     for (simcyc = 0; simcyc < MAX_SIM_CYC; simcyc++) {
