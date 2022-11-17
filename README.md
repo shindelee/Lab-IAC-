@@ -1,4 +1,4 @@
-Tasks
+**Tasks**
 
 4 Separate Components:
 1) Program Counter and related adders, and the instruction memory.
