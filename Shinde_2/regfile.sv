@@ -18,15 +18,13 @@ module regfile #(
     logic [DATA_WIDTH-1:0] ram_array [2**ADDRESS_WIDTH-1:0];
 
     always_ff @(posedge clk) begin
-        if (we3 == 1'b1)
-            ram_array[addr3] <= wd3;
-        
-        rd1 <= ram_array[addr1];
-        rd2 <= ram_array[addr2];
-        
+        if (we3) ram_array[addr3] <= wd3;
     end
-    
-    // output logic
-    assign a0 = wd3;
+
+    always_comb begin
+        rd1 = (addr1 == 0) ? 0 : ram_array[addr1];
+        rd2 = (addr2 == 0) ? 0 : ram_array[addr2];
+        a0 = ram_array[10];
+    end
 
 endmodule

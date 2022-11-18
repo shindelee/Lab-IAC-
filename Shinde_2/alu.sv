@@ -11,12 +11,12 @@ module alu #(
 
     always_comb begin
         if(ALUControl == 3'b000)
-            out = ALUop1 + ALUop2
+            out = ALUop1 + ALUop2;
         
         if(ALUop1 == ALUop2)
-            eq = 1
+            eq = 1;
         else 
-            eq = 0
+            eq = 0;
         
     end
 
