@@ -10,9 +10,11 @@ module alu #(
 );
 
     always_comb begin
+        // SUM
         if(ALUControl == 3'b000)
             out = ALUop1 + ALUop2;
         
+        // EQ
         if(ALUop1 == ALUop2)
             eq = 1;
         else 
