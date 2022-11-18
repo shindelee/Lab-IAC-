@@ -12,3 +12,5 @@ if (ImmScr)
 else
     assign ImmOp[31:12] = 20{instr[address_width-1]};
     assign ImmOp[11:0] = {instr[address_width-1], instr[7], instr[30:25], instr[11:8]};
+
+endmodule
