@@ -11,9 +11,9 @@ module blue_part #(
 logic       next_pc;
 
 always_ff@(posedge clk) begin
-    if (rst)        PC <= 32'b0;
+    if (rst)        PC <= address_width{1'b0};
     else if (PCsrc)      PC <= PC + ImmOp;
-    else            PC <= PC + 3'd4;
+    else            PC <= PC + 4;
 end
 
 endmodule
