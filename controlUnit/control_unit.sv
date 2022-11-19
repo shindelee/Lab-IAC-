@@ -23,7 +23,7 @@ always_comb begin
         ALUsrc = 1'b1;
     if(instr[6:0] == 7'b1100011)
         if(EQ != 1)
-            ImmSrc = 1'b1;
+            ImmSrc = 1'b0;
             PCsrc = 1'b1;     
 end
 
