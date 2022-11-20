@@ -18,7 +18,7 @@ module regfile #(
     logic [DATA_WIDTH-1:0] ram_array [2**ADDRESS_WIDTH-1:0];
 
     always_ff @(posedge clk) begin
-        if (we3) ram_array[addr3] <= wd3;
+        if (we3) wd3 <= ram_array[addr3];
     end
 
     always_comb begin

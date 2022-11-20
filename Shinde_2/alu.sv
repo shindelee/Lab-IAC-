@@ -2,9 +2,9 @@ module alu #(
     DATA_WIDTH = 32
 )(
     // interface signals
-    input logic        [DATA_WIDTH-1:0]         ALUop1,
-    input logic        [DATA_WIDTH-1:0]         ALUop2,       // rs1
-    input logic        [2:0]                    ALUControl,      
+    input logic        [DATA_WIDTH-1:0]         ALUop1,       // rd1
+    input logic        [DATA_WIDTH-1:0]         ALUop2,       
+    input logic        [2:0]                    ALUCtrl,      
     output logic                                eq,
     output logic                                out           // ALUout
 );
