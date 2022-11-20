@@ -1,13 +1,13 @@
 module control_unit #(
-    parameter address_width = 32
+    parameter address_width = 7
 )(
     input logic      [address_width-1:0]   instr,  //output from Instr Mem
-    input logic         EQ,
-    output logic        RegWrite,
-    output logic        ALUctrl,
-    output logic        ALUsrc,
-    output logic        ImmSrc,
-    output logic        PCsrc
+    input logic                               EQ,
+    output logic                        RegWrite,
+    output logic     [2:0]               ALUctrl,
+    output logic                          ALUsrc,
+    output logic                          ImmSrc,
+    output logic                           PCsrc
 );
 
 always_comb begin
