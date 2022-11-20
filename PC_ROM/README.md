@@ -6,7 +6,6 @@
     - ImmOp from sign extend
 - Output of this part:
     - RD, the 32-bit instruction
-- ADDRESS_WIDTH is set to 8 for testing purposes. If it were 32, then $2^{32}$ elements need to be created in the **.mem** file
 - Simulation results:
  ![image](https://user-images.githubusercontent.com/58468284/202775519-1daa46b6-3444-4972-a34b-739d01dde015.png)
 - Data in Instr Mem:
