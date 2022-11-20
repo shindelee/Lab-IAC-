@@ -1,6 +1,6 @@
 module alu #(
-    DATA_WIDTH = 32,
-    ADDRESS_WIDTH = 5
+    parameter DATA_WIDTH = 32,
+              ADDRESS_WIDTH = 5
 )(
     // interface signals
     input logic                                      clk,
@@ -15,10 +15,10 @@ module alu #(
     output logic       [DATA_WIDTH-1:0]              a0
 );
 
-logic ALUout;
-logic ALUop1;
-logic ALUop2;
-logic regOp2;
+logic [DATA_WIDTH-1:0] ALUout;
+logic [DATA_WIDTH-1:0] ALUop1;
+logic [DATA_WIDTH-1:0] ALUop2;
+logic [DATA_WIDTH-1:0] regOp2;
 
 regfile RegFile (
     .clk(clk),

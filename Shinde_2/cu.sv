@@ -3,8 +3,8 @@ module cu #(
 )(
     input logic      [ADDRESS_WIDTH-1:0]   instr,  
     input logic                               EQ,
-    output logic     [3:1]              RegWrite,
-    output logic                         ALUctrl,
+    output logic                        RegWrite,
+    output logic        [2:0]            ALUctrl,
     output logic                          ALUsrc,
     output logic                          ImmSrc,
     output logic                           PCsrc
