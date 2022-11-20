@@ -4,7 +4,7 @@ module control_unit #(
     input logic      [address_width-1:0]   instr,  //output from Instr Mem
     input logic         EQ,
     output logic        RegWrite,
-    output logic      []  ALUctrl,
+    output logic        ALUctrl,
     output logic        ALUsrc,
     output logic        ImmSrc,
     output logic        PCsrc
