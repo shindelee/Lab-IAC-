@@ -12,21 +12,41 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___sequent__TOP__0\n"); );
     // Body
     vlSelf->top__DOT__A = ((IData)(vlSelf->rst) ? 0U
-                            : (0xffU & ((IData)(vlSelf->PCsrc)
-                                         ? ((IData)(vlSelf->top__DOT__A) 
-                                            + (IData)(vlSelf->ImmOp))
-                                         : ((IData)(4U) 
-                                            + (IData)(vlSelf->top__DOT__A)))));
-    vlSelf->RD = ((vlSelf->top__DOT__mem__DOT__rom_array
-                   [vlSelf->top__DOT__A] << 0x18U) 
-                  | ((vlSelf->top__DOT__mem__DOT__rom_array
-                      [(0xffU & ((IData)(1U) + (IData)(vlSelf->top__DOT__A)))] 
-                      << 0x10U) | ((vlSelf->top__DOT__mem__DOT__rom_array
-                                    [(0xffU & ((IData)(2U) 
-                                               + (IData)(vlSelf->top__DOT__A)))] 
-                                    << 8U) | vlSelf->top__DOT__mem__DOT__rom_array
-                                   [(0xffU & ((IData)(3U) 
-                                              + (IData)(vlSelf->top__DOT__A)))])));
+                            : ((IData)(vlSelf->PCsrc)
+                                ? (vlSelf->top__DOT__A 
+                                   + vlSelf->ImmOp)
+                                : ((IData)(4U) + vlSelf->top__DOT__A)));
+    vlSelf->RD = ((((0x14U >= (0x1fU & vlSelf->top__DOT__A))
+                     ? vlSelf->top__DOT__mem__DOT__rom_array
+                    [(0x1fU & vlSelf->top__DOT__A)]
+                     : 0U) << 0x18U) | ((((0x14U >= 
+                                           (0x1fU & 
+                                            ((IData)(1U) 
+                                             + vlSelf->top__DOT__A)))
+                                           ? vlSelf->top__DOT__mem__DOT__rom_array
+                                          [(0x1fU & 
+                                            ((IData)(1U) 
+                                             + vlSelf->top__DOT__A))]
+                                           : 0U) << 0x10U) 
+                                        | ((((0x14U 
+                                              >= (0x1fU 
+                                                  & ((IData)(2U) 
+                                                     + vlSelf->top__DOT__A)))
+                                              ? vlSelf->top__DOT__mem__DOT__rom_array
+                                             [(0x1fU 
+                                               & ((IData)(2U) 
+                                                  + vlSelf->top__DOT__A))]
+                                              : 0U) 
+                                            << 8U) 
+                                           | ((0x14U 
+                                               >= (0x1fU 
+                                                   & ((IData)(3U) 
+                                                      + vlSelf->top__DOT__A)))
+                                               ? vlSelf->top__DOT__mem__DOT__rom_array
+                                              [(0x1fU 
+                                                & ((IData)(3U) 
+                                                   + vlSelf->top__DOT__A))]
+                                               : 0U))));
 }
 
 void Vtop___024root___eval(Vtop___024root* vlSelf) {

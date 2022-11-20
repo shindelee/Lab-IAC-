@@ -1,5 +1,5 @@
 module top#(
-    parameter ADDRESS_WIDTH = 8,
+    parameter ADDRESS_WIDTH = 32,
     DATAOUT_WIDTH = 32
 )(
     input logic                            PCsrc, // output from control unit

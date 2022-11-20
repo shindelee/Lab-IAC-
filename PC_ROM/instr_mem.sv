@@ -1,5 +1,5 @@
 module instr_mem #(
-    parameter   ADDRESS_WIDTH = 8, //testing
+    parameter   ADDRESS_WIDTH = 32,
                 DATAOUT_WIDTH = 32,
                 DATA_WIDTH = 8
 )(
@@ -7,7 +7,7 @@ module instr_mem #(
     output logic [DATAOUT_WIDTH-1:0] RD
 );
 
-logic [DATA_WIDTH-1:0] rom_array [2**ADDRESS_WIDTH-1:0];
+logic [DATA_WIDTH-1:0] rom_array [20:0]; // the parameter after the rom_array is the size of the .mem file
 
 initial begin
         $display("Loading rom.");

@@ -16,11 +16,12 @@ class Vtop___024root final : public VerilatedModule {
     VL_IN8(clk,0,0);
     VL_IN8(PCsrc,0,0);
     VL_IN8(rst,0,0);
-    VL_IN8(ImmOp,7,0);
-    CData/*7:0*/ top__DOT__A;
     CData/*0:0*/ __Vclklast__TOP__clk;
+    VL_IN(ImmOp,31,0);
     VL_OUT(RD,31,0);
-    VlUnpacked<CData/*7:0*/, 256> top__DOT__mem__DOT__rom_array;
+    IData/*31:0*/ top__DOT__A;
+    VlUnpacked<CData/*7:0*/, 21> top__DOT__mem__DOT__rom_array;
+    VlUnpacked<CData/*0:0*/, 1> __Vm_traceActivity;
 
     // INTERNAL VARIABLES
     Vtop__Syms* const vlSymsp;

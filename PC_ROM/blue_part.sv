@@ -1,5 +1,5 @@
 module blue_part #(
-    parameter address_width = 8
+    parameter address_width = 32
 )(
     input logic                            PCsrc, // output from control unit
     input logic                            clk,
