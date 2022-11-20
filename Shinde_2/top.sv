@@ -9,7 +9,7 @@ module alu #(
     input logic        [ADDRESS_WIDTH-1:0]           rd,
     input logic                                      RegWrite,
     input logic                                      ALUsrc,   
-    input logic                                      ALUCtrl,
+    input logic        [2:0]                         ALUCtrl,
     input logic        [DATA_WIDTH-1:0]              ImmOp,
     output logic                                     eq,
     output logic       [DATA_WIDTH-1:0]              a0

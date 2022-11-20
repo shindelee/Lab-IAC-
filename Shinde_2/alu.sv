@@ -1,5 +1,5 @@
 module alu #(
-    DATA_WIDTH = 32
+    parameter DATA_WIDTH = 32
 )(
     // interface signals
     input logic        [DATA_WIDTH-1:0]         ALUop1,       // rd1
@@ -11,7 +11,7 @@ module alu #(
 
     always_comb begin
         // SUM
-        if(ALUControl == 3'b000)
+        if(ALUCtrl == 3'b000)
             out = ALUop1 + ALUop2;
         
         // EQ
