@@ -18,16 +18,20 @@ VL_INLINE_OPT void Vfullcpu___024root___sequent__TOP__0(Vfullcpu___024root* vlSe
     __Vdlyvset__fullcpu__DOT__topregalu__DOT__RegFile__DOT__ram_array__v0 = 0U;
     if (vlSelf->fullcpu__DOT__RegWrite) {
         __Vdlyvval__fullcpu__DOT__topregalu__DOT__RegFile__DOT__ram_array__v0 
-            = (vlSelf->fullcpu__DOT__topregalu__DOT__ALUop1 
-               + vlSelf->fullcpu__DOT__ImmOp);
+            = vlSelf->fullcpu__DOT__topregalu__DOT__ALUout;
         __Vdlyvset__fullcpu__DOT__topregalu__DOT__RegFile__DOT__ram_array__v0 = 1U;
         __Vdlyvdim0__fullcpu__DOT__topregalu__DOT__RegFile__DOT__ram_array__v0 
             = (0x1fU & (vlSelf->fullcpu__DOT__Instr 
                         >> 7U));
     }
     vlSelf->fullcpu__DOT__blue__DOT__A = ((IData)(vlSelf->rst)
-                                           ? 0U : (vlSelf->fullcpu__DOT__blue__DOT__A 
-                                                   + vlSelf->fullcpu__DOT__ImmOp));
+                                           ? 0U : ((IData)(vlSelf->fullcpu__DOT__PCsrc)
+                                                    ? 
+                                                   (vlSelf->fullcpu__DOT__blue__DOT__A 
+                                                    + vlSelf->fullcpu__DOT__ImmOp)
+                                                    : 
+                                                   ((IData)(4U) 
+                                                    + vlSelf->fullcpu__DOT__blue__DOT__A)));
     if (__Vdlyvset__fullcpu__DOT__topregalu__DOT__RegFile__DOT__ram_array__v0) {
         vlSelf->fullcpu__DOT__topregalu__DOT__RegFile__DOT__ram_array[__Vdlyvdim0__fullcpu__DOT__topregalu__DOT__RegFile__DOT__ram_array__v0] 
             = __Vdlyvval__fullcpu__DOT__topregalu__DOT__RegFile__DOT__ram_array__v0;
@@ -65,13 +69,17 @@ VL_INLINE_OPT void Vfullcpu___024root___sequent__TOP__0(Vfullcpu___024root* vlSe
                                                  + vlSelf->fullcpu__DOT__blue__DOT__A))]
                                              : 0U))));
     vlSelf->fullcpu__DOT__RegWrite = 0U;
-    if ((0x13U == (0x7fU & vlSelf->fullcpu__DOT__Instr))) {
-        vlSelf->fullcpu__DOT__RegWrite = 1U;
-    }
+    vlSelf->fullcpu__DOT__ALUctrl = 0U;
     vlSelf->fullcpu__DOT__topregalu__DOT__ALUop1 = 
         ((0U == (0x1fU & (vlSelf->fullcpu__DOT__Instr 
                           >> 0xfU))) ? 0U : vlSelf->fullcpu__DOT__topregalu__DOT__RegFile__DOT__ram_array
          [(0x1fU & (vlSelf->fullcpu__DOT__Instr >> 0xfU))]);
+    vlSelf->fullcpu__DOT__ALUsrc = 0U;
+    if ((0x13U == (0x7fU & vlSelf->fullcpu__DOT__Instr))) {
+        vlSelf->fullcpu__DOT__RegWrite = 1U;
+        vlSelf->fullcpu__DOT__ALUctrl = 0U;
+        vlSelf->fullcpu__DOT__ALUsrc = 1U;
+    }
 }
 
 VL_INLINE_OPT void Vfullcpu___024root___combo__TOP__0(Vfullcpu___024root* vlSelf) {
@@ -79,10 +87,27 @@ VL_INLINE_OPT void Vfullcpu___024root___combo__TOP__0(Vfullcpu___024root* vlSelf
     Vfullcpu__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vfullcpu___024root___combo__TOP__0\n"); );
     // Body
-    vlSelf->fullcpu__DOT__ImmSrc = 1U;
+    vlSelf->fullcpu__DOT__topregalu__DOT__ALUop2 = 
+        ((IData)(vlSelf->fullcpu__DOT__ALUsrc) ? vlSelf->fullcpu__DOT__ImmOp
+          : ((0U == (0x1fU & (vlSelf->fullcpu__DOT__Instr 
+                              >> 0x14U))) ? 0U : vlSelf->fullcpu__DOT__topregalu__DOT__RegFile__DOT__ram_array
+             [(0x1fU & (vlSelf->fullcpu__DOT__Instr 
+                        >> 0x14U))]));
+    if ((0U == (IData)(vlSelf->fullcpu__DOT__ALUctrl))) {
+        vlSelf->fullcpu__DOT__topregalu__DOT__ALUout 
+            = (vlSelf->fullcpu__DOT__topregalu__DOT__ALUop1 
+               + vlSelf->fullcpu__DOT__topregalu__DOT__ALUop2);
+    }
+    vlSelf->fullcpu__DOT__EQ = (vlSelf->fullcpu__DOT__topregalu__DOT__ALUop1 
+                                == vlSelf->fullcpu__DOT__topregalu__DOT__ALUop2);
+    vlSelf->fullcpu__DOT__PCsrc = 0U;
+    vlSelf->fullcpu__DOT__ImmSrc = 0U;
+    if ((0x13U == (0x7fU & vlSelf->fullcpu__DOT__Instr))) {
+        vlSelf->fullcpu__DOT__ImmSrc = 1U;
+    }
     if ((0x63U == (0x7fU & vlSelf->fullcpu__DOT__Instr))) {
-        if ((vlSelf->fullcpu__DOT__topregalu__DOT__ALUop1 
-             != vlSelf->fullcpu__DOT__ImmOp)) {
+        if ((1U & (~ (IData)(vlSelf->fullcpu__DOT__EQ)))) {
+            vlSelf->fullcpu__DOT__PCsrc = 1U;
             vlSelf->fullcpu__DOT__ImmSrc = 0U;
         }
     }
@@ -94,25 +119,25 @@ VL_INLINE_OPT void Vfullcpu___024root___combo__TOP__0(Vfullcpu___024root* vlSelf
                                        (vlSelf->fullcpu__DOT__Instr 
                                         >> 0x14U));
     } else {
-        vlSelf->fullcpu__DOT__ImmOp = ((0xfffU & vlSelf->fullcpu__DOT__ImmOp) 
+        vlSelf->fullcpu__DOT__ImmOp = ((0x1fffU & vlSelf->fullcpu__DOT__ImmOp) 
                                        | ((- (IData)(
                                                      (vlSelf->fullcpu__DOT__Instr 
                                                       >> 0x1fU))) 
-                                          << 0xcU));
-        vlSelf->fullcpu__DOT__ImmOp = ((0xfffff000U 
+                                          << 0xdU));
+        vlSelf->fullcpu__DOT__ImmOp = ((0xffffe000U 
                                         & vlSelf->fullcpu__DOT__ImmOp) 
-                                       | ((0x800U & 
-                                           (vlSelf->fullcpu__DOT__Instr 
-                                            >> 0x14U)) 
-                                          | ((0x400U 
+                                       | ((0x1000U 
+                                           & (vlSelf->fullcpu__DOT__Instr 
+                                              >> 0x13U)) 
+                                          | ((0x800U 
                                               & (vlSelf->fullcpu__DOT__Instr 
-                                                 << 3U)) 
-                                             | ((0x3f0U 
+                                                 << 4U)) 
+                                             | ((0x7e0U 
                                                  & (vlSelf->fullcpu__DOT__Instr 
-                                                    >> 0x15U)) 
-                                                | (0xfU 
+                                                    >> 0x14U)) 
+                                                | (0x1eU 
                                                    & (vlSelf->fullcpu__DOT__Instr 
-                                                      >> 8U))))));
+                                                      >> 7U))))));
     }
 }
 
@@ -126,6 +151,7 @@ void Vfullcpu___024root___eval(Vfullcpu___024root* vlSelf) {
         vlSelf->__Vm_traceActivity[1U] = 1U;
     }
     Vfullcpu___024root___combo__TOP__0(vlSelf);
+    vlSelf->__Vm_traceActivity[2U] = 1U;
     // Final
     vlSelf->__Vclklast__TOP__clk = vlSelf->clk;
 }

@@ -14,8 +14,8 @@ always_comb begin
         end
     else
         begin
-        ImmOp[31:12] = {20{instr[address_width-1]}};
-        ImmOp[11:0] = {instr[address_width-1], instr[7], instr[30:25], instr[11:8]};
+        ImmOp[31:13] = {19{instr[address_width-1]}};
+        ImmOp[12:0] = {instr[address_width-1], instr[7], instr[30:25], instr[11:8],1'b0};
         end    
 end
 

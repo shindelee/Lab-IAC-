@@ -15,16 +15,20 @@ always_comb begin
     ImmSrc = 1'b0;
     ALUctrl = 3'b000;
     ALUsrc = 1'b0;
-    PCsrc = 1'b0;
+    PCsrc = 1'b0; 
     if(instr[6:0] == 7'b0010011) 
+        begin 
         RegWrite = 1'b1;
         ImmSrc = 1'b1;
         ALUctrl = 3'b000;
         ALUsrc = 1'b1;
+        end
     if(instr[6:0] == 7'b1100011)
         if(EQ == 1'b0)
+        begin
             ImmSrc = 1'b0;
             PCsrc = 1'b1;
-end
+        end
+end 
 
 endmodule

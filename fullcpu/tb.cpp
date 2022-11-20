@@ -30,6 +30,10 @@ int main(int argc, char **argv, char **env) {
     if (simcyc == 20) {
       top->rst = 1;
     }
+    else
+    {
+      top->rst = 0;
+    }
 
     if (Verilated::gotFinish())  exit(0);
   }
