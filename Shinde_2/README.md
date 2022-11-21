@@ -28,12 +28,15 @@ Output: a0
 2 instructions: 
 
 i) SUM 
+
    ALUCtrl[2:0] = [000]
+   
    ALUout = ALUop1 + ALUop2 
 
    Since the sum function is performed by **addi**, it only adds RD1 and sign-extended ImmOp to the ALUout.
 
 ii) EQ
+
     if ALUop1 == ALUop2, EQ = 1, else 0
 
     Tests the equality of both inputs, ALUop1 and ALUop2
@@ -41,6 +44,7 @@ ii) EQ
 **MUX**
 
 ALUsrc = 1 --> RD2
+
 ALUsrc = 0 --> sign extended ImmOp
 
 **Testbench**
