@@ -1,7 +1,9 @@
 2. The Register File, ALU and the related MUX
 
-**Register File**<br/>
-Register:<br/>
+**Register File**
+
+Register:
+
 i) rs1 
 - Instruction [19:15]
 - loads the data at memory address AD1 --> RD1 = ram_array[AD1]
@@ -22,7 +24,9 @@ Output: a0
 ![image] (https://user-images.githubusercontent.com/64958532/202964687-7191e1ef-003f-406d-9d02-c236d66fa918.png")
 
 **ALU**
+
 2 instructions: 
+
 i) SUM 
    ALUCtrl[2:0] = [000]
    ALUout = ALUop1 + ALUop2 
@@ -35,6 +39,7 @@ ii) EQ
     Tests the equality of both inputs, ALUop1 and ALUop2
 
 **MUX**
+
 ALUsrc = 1 --> RD2
 ALUsrc = 0 --> sign extended ImmOp
 
