@@ -1,7 +1,7 @@
 2. The Register File, ALU and the related MUX
 
 **Register File**<br/>
-Register:
+Register:<br/>
 i) rs1 
 - Instruction [19:15]
 - loads the data at memory address AD1 --> RD1 = ram_array[AD1]
