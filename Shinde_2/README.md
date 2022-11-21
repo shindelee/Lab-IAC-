@@ -37,7 +37,7 @@ i) SUM
    
 ii) EQ
 
-    Tests the equality of both inputs, ALUop1 and ALUop2
+Test the equality of both inputs, ALUop1 and ALUop2.
 
 **MUX**
 
