@@ -21,7 +21,8 @@ Write enable: WE3
 Output: a0
 - ram_array[10], register x0 always gives constant value 0
 - This can be seen in the RISC-V Registers table.
-(https://user-images.githubusercontent.com/64958532/202964687-7191e1ef-003f-406d-9d02-c236d66fa918.png")
+
+<img src = "/Images/register.png">
 
 **2. ALU**
 
