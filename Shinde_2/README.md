@@ -22,13 +22,7 @@ Output: a0
 - ram_array[10], register x0 always gives constant value 0
 - This can be seen in the RISC-V Registers table.
 
-<<<<<<< HEAD
 ![image](images/register.png)
-=======
-![image]("https://github.com/shindelee/Lab-IAC-/blob/main/register.png?raw=true")
-
-![image]("/images/register.png")
->>>>>>> 9c14fd5abb13d7eb314f365164c48d6509872a42
 
 
 
