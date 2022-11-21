@@ -16,7 +16,7 @@ Destination Register: rd
 - Instruction [11:7]
 
 Write enable: WE3
-- Writes the data WD3 into the data at memory address AD3 --> ram_array[AD3] <= WD3
+- Writes the data WD3 into the data at memory address AD3 (rd) --> ram_array[AD3] <= WD3
 
 Output: a0
 - ram_array[10], register x0 always gives constant value 0
@@ -26,6 +26,12 @@ Output: a0
 **ALU**
 
 2 instructions: 
+
+ii) EQ
+
+    if ALUop1 == ALUop2, EQ = 1, else 0
+
+    Tests the equality of both inputs, ALUop1 and ALUop2
 
 i) SUM 
 
