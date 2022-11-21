@@ -36,6 +36,7 @@ i) SUM
    Since the sum function is performed by **addi**, it only adds RD1 and sign-extended ImmOp to the ALUout.
    
 ii) EQ
+
     Tests the equality of both inputs, ALUop1 and ALUop2
 
 **MUX**
