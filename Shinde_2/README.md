@@ -23,6 +23,10 @@ Output: a0
 - This can be seen in the RISC-V Registers table.
 
 ![image]("https://github.com/shindelee/Lab-IAC-/blob/main/register.png")
+![image]("../Shinde_2/images/register.png")
+![image]("/Shinde_2/images/register.png")
+![image]("../images/register.png")
+
 
 
 
