@@ -1,6 +1,6 @@
 2. The Register File, ALU and the related MUX
 
-**Register File**\n
+**Register File**<br/>
 Register:
 i) rs1 
 - Instruction [19:15]
