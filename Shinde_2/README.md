@@ -1,6 +1,6 @@
-2. The Register File, ALU and the related MUX
+Section 2: The Register File, ALU and the related MUX
 
-**Register File**
+**1. Register File**
 
 Register:
 
@@ -23,7 +23,7 @@ Output: a0
 - This can be seen in the RISC-V Registers table.
 (https://user-images.githubusercontent.com/64958532/202964687-7191e1ef-003f-406d-9d02-c236d66fa918.png")
 
-**ALU**
+**2. ALU**
 
 2 instructions: 
 
@@ -39,7 +39,7 @@ ii) EQ
 
 Test the equality of both inputs, ALUop1 and ALUop2.
 
-**MUX**
+**3. MUX**
 
 ALUsrc = 1 --> RD2
 
