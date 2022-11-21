@@ -22,7 +22,7 @@ Output: a0
 - ram_array[10], register x0 always gives constant value 0
 - This can be seen in the RISC-V Registers table.
 
-<img src = "/Images/register.png">
+![image]("../images/register.png")
 
 **2. ALU**
 
