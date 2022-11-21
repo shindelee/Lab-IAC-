@@ -27,12 +27,6 @@ Output: a0
 
 2 instructions: 
 
-ii) EQ
-
-    if ALUop1 == ALUop2, EQ = 1, else 0
-
-    Tests the equality of both inputs, ALUop1 and ALUop2
-
 i) SUM 
 
    ALUCtrl[2:0] = [000]
@@ -40,7 +34,6 @@ i) SUM
    ALUout = ALUop1 + ALUop2 
 
    Since the sum function is performed by **addi**, it only adds RD1 and sign-extended ImmOp to the ALUout.
-
 ii) EQ
 
     if ALUop1 == ALUop2, EQ = 1, else 0
