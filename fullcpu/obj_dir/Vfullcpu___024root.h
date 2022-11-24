@@ -35,7 +35,7 @@ class Vfullcpu___024root final : public VerilatedModule {
     IData/*31:0*/ __Vchglast__TOP__fullcpu__DOT__ImmOp;
     VlUnpacked<CData/*7:0*/, 28> fullcpu__DOT__blue__DOT__mem__DOT__rom_array;
     VlUnpacked<IData/*31:0*/, 32> fullcpu__DOT__topregalu__DOT__RegFile__DOT__ram_array;
-    VlUnpacked<IData/*31:0*/, 2> fullcpu__DOT__topregalu__DOT__datamemory__DOT__ram_array;
+    VlUnpacked<IData/*31:0*/, 256> fullcpu__DOT__topregalu__DOT__datamemory__DOT__ram_array;
     VlUnpacked<CData/*0:0*/, 3> __Vm_traceActivity;
 
     // INTERNAL VARIABLES

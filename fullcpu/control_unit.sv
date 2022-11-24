@@ -14,7 +14,7 @@ module control_unit #(
 
 always_comb begin
     RegWrite = 1'b0;
-    ImmSrc = 1'b0;
+    ImmSrc = 3'b000;
     ALUctrl = 3'b000;
     ALUsrc = 1'b0;
     PCsrc = 1'b0; 
@@ -37,6 +37,7 @@ always_comb begin
         MemWrite = 1'b1;
     if(instr[6:0] == 7'b0000011) // lw 
         ResultSrc = 1'b1;
+        RegWrite = 1'b1;
 end 
 
 endmodule

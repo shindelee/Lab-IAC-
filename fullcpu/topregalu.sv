@@ -22,6 +22,7 @@ logic [DATA_WIDTH-1:0] ALUop1;
 logic [DATA_WIDTH-1:0] ALUop2;
 logic [DATA_WIDTH-1:0] regOp2;
 logic [DATA_WIDTH-1:0] ReadData;
+logic [DATA_WIDTH-1:0] Results; // output from the result mux
 
 regfile RegFile (
     .clk(clk),
@@ -29,7 +30,7 @@ regfile RegFile (
     .addr2(rs2),
     .addr3(rd),
     .we3(RegWrite),
-    .wd3(ALUout),
+    .wd3(Results),
     .rd1(ALUop1),
     .rd2(regOp2),
     .a0(a0)
@@ -62,7 +63,7 @@ mux ResultMux(
     .d0(ALUout),
     .d1(ReadData),
     .s(ResultSrc),
-    .out(a0)
+    .out(Results)
 );
 
 endmodule

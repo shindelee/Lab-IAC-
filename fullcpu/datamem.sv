@@ -9,14 +9,13 @@ module datamem#(
     output logic [DATA_WIDTH-1:0] rd 
 );
 
-logic [DATA_WIDTH-1:0] ram_array [2**ADDRESS_WIDTH-1:0];
+logic [DATA_WIDTH-1:0] ram_array [255:0];
 
-assign rd = ram_array [addr];
-assign ram_array[255] = 32'h12345;
+assign ram_array[255] = 32'h12345; // a0 should be 12345 after FE
 
 always_ff @(posedge clk) begin 
     if(wr_en == 1'b1)
         ram_array[addr] <= wd;
 end
-
+assign rd = ram_array [addr];
 endmodule
