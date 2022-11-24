@@ -6,7 +6,7 @@ module control_unit #(
     output logic                        RegWrite,
     output logic     [2:0]               ALUctrl,
     output logic                          ALUsrc,
-    output logic                          ImmSrc,
+    output logic                           ImmSrc,
     output logic                           PCsrc
 );
 
