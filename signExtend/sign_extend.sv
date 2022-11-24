@@ -7,11 +7,11 @@ module sign_extend #(
 );
 
 always_comb begin
-    if (ImmScr == [000])begin
+    if (ImmScr == 3b'000)begin
         assign ImmOp[31:12] = 20{instr[address_width-1]};
         assign ImmOp[11:0] = instr[address_width-1:20];
     end
-    else if (ImmScr == [010]]) begin
+    else if (ImmScr == 3b'010) begin
         assign ImmOp[31:12] = 20{instr[address_width-1]};
         assign ImmOp[11:0] = {instr[7], instr[30:25], instr[11:8], 1'b0};
     end
