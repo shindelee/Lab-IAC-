@@ -20,7 +20,9 @@ class Vfullcpu___024root final : public VerilatedModule {
     CData/*0:0*/ fullcpu__DOT__RegWrite;
     CData/*2:0*/ fullcpu__DOT__ALUctrl;
     CData/*0:0*/ fullcpu__DOT__ALUsrc;
-    CData/*0:0*/ fullcpu__DOT__ImmSrc;
+    CData/*2:0*/ fullcpu__DOT__ImmSrc;
+    CData/*0:0*/ fullcpu__DOT__MemWrite;
+    CData/*0:0*/ fullcpu__DOT__ResultSrc;
     CData/*0:0*/ __Vclklast__TOP__clk;
     VL_OUT(a0,31,0);
     IData/*31:0*/ fullcpu__DOT__ImmOp;
@@ -29,9 +31,11 @@ class Vfullcpu___024root final : public VerilatedModule {
     IData/*31:0*/ fullcpu__DOT__topregalu__DOT__ALUout;
     IData/*31:0*/ fullcpu__DOT__topregalu__DOT__ALUop1;
     IData/*31:0*/ fullcpu__DOT__topregalu__DOT__ALUop2;
+    IData/*31:0*/ fullcpu__DOT__topregalu__DOT__regOp2;
     IData/*31:0*/ __Vchglast__TOP__fullcpu__DOT__ImmOp;
     VlUnpacked<CData/*7:0*/, 28> fullcpu__DOT__blue__DOT__mem__DOT__rom_array;
     VlUnpacked<IData/*31:0*/, 32> fullcpu__DOT__topregalu__DOT__RegFile__DOT__ram_array;
+    VlUnpacked<IData/*31:0*/, 2> fullcpu__DOT__topregalu__DOT__datamemory__DOT__ram_array;
     VlUnpacked<CData/*0:0*/, 3> __Vm_traceActivity;
 
     // INTERNAL VARIABLES

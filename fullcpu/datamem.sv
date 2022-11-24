@@ -12,6 +12,7 @@ module datamem#(
 logic [DATA_WIDTH-1:0] ram_array [2**ADDRESS_WIDTH-1:0];
 
 assign rd = ram_array [addr];
+assign ram_array[255] = 32'h12345;
 
 always_ff @(posedge clk) begin 
     if(wr_en == 1'b1)

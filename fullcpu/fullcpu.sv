@@ -13,7 +13,9 @@ logic EQ;
 logic RegWrite;
 logic [2:0] ALUctrl;
 logic ALUsrc;
-logic ImmSrc;
+logic [2:0] ImmSrc;
+logic MemWrite;
+logic ResultSrc;
 
 top blue(
     .PCsrc(PCsrc),
@@ -30,7 +32,9 @@ control_unit controlunit(
     .ALUctrl(ALUctrl),
     .ALUsrc(ALUsrc),
     .ImmSrc(ImmSrc),
-    .PCsrc(PCsrc)
+    .PCsrc(PCsrc),
+    .MemWrite(MemWrite),
+    .ResultSrc(ResultSrc)
 );
 
 sign_extend signextend (
@@ -46,6 +50,8 @@ topregalu topregalu (
     .rd(Instr[11:7]),
     .RegWrite(RegWrite),
     .ALUsrc(ALUsrc),
+    .ResultSrc(ResultSrc),
+    .MemWrite(MemWrite),
     .ALUCtrl(ALUctrl),
     .ImmOp(ImmOp),
     .eq(EQ),

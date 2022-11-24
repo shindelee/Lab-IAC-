@@ -8,7 +8,9 @@ module topregalu #(
     input logic        [ADDRESS_WIDTH-1:0]           rs2,      
     input logic        [ADDRESS_WIDTH-1:0]           rd,
     input logic                                      RegWrite,
-    input logic                                      ALUsrc,   
+    input logic                                      ALUsrc,
+    input logic                                      ResultSrc,
+    input logic                                      MemWrite,   
     input logic        [2:0]                         ALUCtrl,
     input logic        [DATA_WIDTH-1:0]              ImmOp,
     output logic                                     eq,
@@ -19,6 +21,7 @@ logic [DATA_WIDTH-1:0] ALUout;
 logic [DATA_WIDTH-1:0] ALUop1;
 logic [DATA_WIDTH-1:0] ALUop2;
 logic [DATA_WIDTH-1:0] regOp2;
+logic [DATA_WIDTH-1:0] ReadData;
 
 regfile RegFile (
     .clk(clk),
@@ -45,6 +48,21 @@ mux MUX(
     .d1(ImmOp),
     .s(ALUsrc),
     .out(ALUop2)
+);
+
+datamem datamemory(
+    .clk(clk),
+    .wr_en(MemWrite),
+    .addr(ALUout),
+    .wd(regOp2),
+    .rd(ReadData)
+);
+
+mux ResultMux(
+    .d0(ALUout),
+    .d1(ReadData),
+    .s(ResultSrc),
+    .out(a0)
 );
 
 endmodule
