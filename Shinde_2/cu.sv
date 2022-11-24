@@ -1,5 +1,5 @@
 module cu #(
-    parameter ADDRESS_WIDTH = 32 // why 32?
+    parameter ADDRESS_WIDTH = 32 
 )(
     input logic      [ADDRESS_WIDTH-1:0]   instr,  
     input logic                               EQ,
@@ -34,7 +34,7 @@ always_comb begin
     // not equal
     if(instr[6:0] == 7'b1100011)
         if(EQ != 1)
-            ImmSrc = 1'b0; // why though?
+            ImmSrc = 1'b0; 
             PCsrc = 1'b1;    
 end
 
